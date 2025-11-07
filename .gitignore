@@ -1,0 +1,11 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+#vector store
+chroma_db/
+
+#pdf file
+data/*.pdf
