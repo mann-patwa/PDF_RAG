@@ -35,11 +35,9 @@ Make sure you have the following installed on your system:
 Clone the repository to your local machine using Git:
 
 ```bash
-git clone [https://github.com/YourUsername/YourRepoName.git](https://github.com/YourUsername/YourRepoName.git)
-cd YourRepoName
+git clone [https://github.com/mann-patwa/PDF_RAG.git](https://github.com/mann-patwa/PDF_RAG.git)
+cd PDF_RAG
 ```
-
-_(Replace `YourUsername/YourRepoName` with your actual repository URL.)_
 
 #### Step 3: Create a Virtual Environment
 
@@ -51,10 +49,10 @@ It is a strong best practice to use a virtual environment to keep your project's
   source .venv/bin/activate
   ```
 - **On Windows (Command Prompt):**
-  `bash
+  ```bash
     python -m venv .venv
     .\.venv\Scripts\activate
-    `
+  ```
   You'll know it worked if you see `(.venv)` at the beginning of your terminal prompt.
 
 #### Step 4: Install All Dependencies
