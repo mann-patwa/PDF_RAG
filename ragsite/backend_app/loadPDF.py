@@ -83,23 +83,6 @@ def setup_llama_index_settings():
         Settings.embed_model = embed_model
         print("Hugging Face Embedding model configured (BAAI/bge-small-en-v1.5).")
         
-        
-        system_prompt = "You are a Q&A assistant. Your goal is to answer questions as accurately as possible based on the context provided."
-        
-        query_wrapper_prompt = "<|user|>\n{query_str}\n</s>\n<|assistant|>\n"
-
-        llm = HuggingFaceLLM(
-            model_name="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-            tokenizer_name="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-            context_window=2048,
-            max_new_tokens=256,
-            device_map="auto", # Lets transformers use GPU if available, else CPU
-            system_prompt=system_prompt,
-            query_wrapper_prompt=query_wrapper_prompt,
-        )
-        Settings.llm = llm
-        print("Hugging Face LLM configured (TinyLlama-1.1B-Chat).")
-        
         print("LlamaIndex Settings configured successfully.")
         return True
         
@@ -124,7 +107,7 @@ def create_vector_index(documents):
     
     db = chromadb.PersistentClient(path="./chroma_db")
     
-    chroma_collection = db.get_or_create_collection("pdf_rag_collection")
+    chroma_collection = db.get_or_create_collection("hospital_collection")
     
     vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
     
@@ -141,7 +124,7 @@ def create_vector_index(documents):
     print("Index created and persisted in './chroma_db'.")
     return index
 
-pdf_file_path = "PDF_path.pdf" 
+pdf_file_path = "/Users/mannpatwa/Desktop/PDF_RAG/data/HospitalManual.pdf" 
 try:
     if setup_llama_index_settings():
         langchain_chunks = load_and_chunk_pdf(pdf_file_path)
