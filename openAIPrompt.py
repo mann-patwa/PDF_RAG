@@ -25,7 +25,7 @@ def setup_llama_index_settings():
         print("HuggingFace Embedding model configured.")
 
         # --- Groq LLM ---
-        groq_api_key = "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"
+        groq_api_key = ""
 
         if not groq_api_key:
             raise ValueError("GROQ_API_KEY environment variable not set!")
