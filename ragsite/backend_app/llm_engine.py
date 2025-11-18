@@ -28,7 +28,7 @@ def initialize_rag():
 
     # LLM
     Settings.llm = Groq(
-        api_key="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",
+        api_key="API_KEY",
         model="llama-3.3-70b-versatile",
         max_tokens=256,
         temperature=0.1,
